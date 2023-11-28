@@ -45,7 +45,7 @@ public class Account {
 	 */
 	public void tick() {
 		for (TimedPayment tp : timedpayments.values()) {
-			tp.tick(); 
+			tp.tick(); // caused an error during testing (double tp.tick())
 		}
 	}
 	

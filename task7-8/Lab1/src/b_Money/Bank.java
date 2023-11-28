@@ -47,7 +47,7 @@ public class Bank {
 		if (accountlist.containsKey(accountid)) {
 			throw new AccountExistsException();
 		} else {
-			accountlist.put(accountid, new Account(accountid, currency));
+			accountlist.put(accountid, new Account(accountid, currency)); // caused an error during testing (accountlist.get(accountid);)
 		}
 	}
 
@@ -79,7 +79,7 @@ public class Bank {
 			throw new AccountDoesNotExistException();
 		} else {
 			Account account = accountlist.get(accountid);
-			account.withdraw(money);
+			account.withdraw(money); // caused an error during testing (account.deposit(money);)
 		}
 	}
 
@@ -94,7 +94,7 @@ public class Bank {
 		if (!accountlist.containsKey(accountid)) {
 			throw new AccountDoesNotExistException();
 		} else {
-			return accountlist.get(accountid).getBalance().getAmount();
+			return accountlist.get(accountid).getBalance().getAmount(); 
 		}
 	}
 
